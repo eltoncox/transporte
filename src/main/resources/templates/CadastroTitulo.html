@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+
+<head>
+<title>Cadastro de título</title>
+</head>
+
+<section layout:fragment="conteudo">
+	<form class="form-horizontal" method="POST" th:action="@{/titulos}"
+		th:object="${titulo}">
+		<div layout:include="MensagemGeral"></div>
+		<div layout:include="MensagemErro"></div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title aw-titulo-panel">
+						<strong>Novo Cadastro de aluno</strong>
+					</h1>
+					<a class="btn btn-link aw-link-panel" th:href="@{/titulos}">Voltar
+						para pesquisa</a>
+				</div>
+			</div>
+
+			<div class="panel-body">
+
+				<input type="hidden" th:field="*{codigo}" />
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('descricao')} ? has-error">
+					<label for="descricao" class="col-sm-2 control-label">Aluno</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="descricao"
+							th:field="*{descricao}" placeholder="Nome" />
+					</div>
+
+					<label for="periodo" class="col-sm-1 control-label">Período</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="periodo"
+							th:field="*{periodo}" placeholder="Manhã ou Tarde" />
+					</div>
+
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('pais')} ? has-error">
+					<label for="pais" class="col-sm-2 control-label">Pais</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="pais"
+							th:field="*{pais}" placeholder="nome do Pai Ou Mãe" />
+					</div>
+
+					<label for="cpf" class="col-sm-1 control-label">CPF</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control cpfMask" id="cpf"
+							th:field="*{cpf}" placeholder="digitar sem traço ou ponto" />
+					</div>
+
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('lougradouro')} ? has-error">
+					<label for="lougradouro" class="col-sm-2 control-label">Lougradouro</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="lougradouro"
+							th:field="*{lougradouro}"
+							placeholder="Avenida, rua,travessa ou viela" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('bairro')} ? has-error">
+					<label for="bairro" class="col-sm-2 control-label">Bairro</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="bairro"
+							th:field="*{bairro}" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('cidade')} ? has-error">
+					<label for="cidade" class="col-sm-2 control-label">Cidade</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="cidade"
+							th:field="*{cidade}" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('celular')} ? has-error">
+					<label for="celular" class="col-sm-2 control-label">Celular</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control foneCel" id="celular"
+							th:field="*{celular}"
+							placeholder="colocar somente números sem ponto ou traço" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('dataVencimento')} ? has-error">
+					<label for="dataVencimento" class="col-sm-2 control-label">Data
+						de vencimento</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="dataVencimento"
+							th:field="*{dataVencimento}" data-provide="datepicker"
+								data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
+								data-date-autoclose="true" data-date-today-highlight="true"
+								data-date-orientation="bottom"
+							placeholder="apenas click no campo !" />
+					</div>
+				</div>
+
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('valor')} ? has-error">
+					<label for="valor" class="col-sm-2 control-label">Valor</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control pagamento js-currency"
+							id="valor" th:field="*{valor}"
+							placeholder="somente números sem ponto ou virgula" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+					<div class="col-sm-2">
+						<select class="form-control" name="status" th:field="*{status}">
+							<option th:each="status : ${todosStatusTitulo}"
+								th:value="${status}" th:text="${status.descricao}"></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+</html>

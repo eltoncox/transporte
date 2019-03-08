@@ -1,0 +1,62 @@
+/* Tela grande */
+@media (min-width: 768px) {
+	.panel-default {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	.alert {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+.navbar-inverse {
+    background-color: #FF6600;   
+}
+
+
+.navbar-brand {
+	padding-top: 12px;
+}
+
+.panel-default {
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+.alert {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.aw-layout-footer {
+	background-color: #FF6600;	 
+	padding-bottom: 10px;
+}
+
+.aw-link-panel {
+	float: right;
+	padding: 0px;
+}
+.1-footer_legal{
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.aw-titulo-panel {
+	float: left;
+	padding-top: 2px;
+}
+#footer1 {	
+	color: white;
+	font-size: 15px;	
+}
+.white-text{
+	color: white;
+}
+
+ ul {
+     list-style-type:none
+ }
