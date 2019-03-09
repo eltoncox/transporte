@@ -25,8 +25,7 @@ import org.springframework.format.annotation.NumberFormat;
 public class Titulo {
 
 	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
 	@NotEmpty(message = " Aluno é obrigatório")
