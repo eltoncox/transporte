@@ -29,7 +29,7 @@ public class TransporteApplication {
 	 
 		@Override
 		public void addViewControllers(ViewControllerRegistry registry) {
-			registry.addRedirectViewController("/", "titulos");
+			registry.addRedirectViewController("/", "/titulos");
 		}		
 	}
 }
