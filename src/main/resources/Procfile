@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* -Dserver.port=$PORT com.elton.transporte/TransporteApplication
+web:    java -cp target/classes:target/dependency/* -Dserver.port=$PORT com/elton/transporte/TransporteApplication
